@@ -1,9 +1,12 @@
+import { v4 as uuidv4 } from 'uuid'
 
 function App() {
   const list = [
-    {id: Math.random(), task:"Estudar progrmação"},
-    {id: Math.random(), task:"Comprar pão"}
+    {id: uuidv4(), task:"Estudar progrmação"},
+    {id: uuidv4(), task:"Comprar pão"}
   ]
+
+  console.log(list)
 
   function inputChange(event) {
     console.log(event.target.value)
