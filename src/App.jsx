@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
+import { Container } from './styles'
 
 function App() {
   const [list, setList] = useState([]) // Estado que guarda a lista completa
@@ -16,7 +17,7 @@ function App() {
   }
 
   return (
-    <div>
+    <Container>
       <input
         onChange={inputChange}
         type="text"
@@ -29,7 +30,7 @@ function App() {
           return <li key={listItem.id}>{listItem.task}</li>;
         })}
       </ul>
-    </div>
+    </Container>
   );
 }
 
