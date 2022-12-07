@@ -65,9 +65,10 @@ export const ListItem = styled.div`
     align-items: center;
     justify-content: space-between;
 
-    background: #E4E4E4;
+    background: ${ props => props.isFinished ? '#E8FF8B' : '#E4E4E4'};
     box-shadow: 1px 4px 10px rgba(0, 0, 0, 0.2);
     border-radius: 5px;
+    text-decoration: ${ props => props.ischecked ? 'line-through' : 'none' };
 
     li {
         list-style: none;
