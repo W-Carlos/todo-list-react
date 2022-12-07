@@ -28,6 +28,17 @@ function App() {
     setList(newList)
   }
 
+  // Função para deletar tarefa
+  function removeTask(id) {
+    const newList = list.filter(item => {
+      if(item.id === id) return false
+
+      return true
+    })
+
+    setList(newList)
+  }
+
   return (
     <Container>
       <ContainerItems>
@@ -43,7 +54,7 @@ function App() {
              <ListItem isFinished={item.finshed} ischecked={item.finshed} key={item.id}>
               <FcCheckmark onClick={() => finishedTask(item.id)}/>
               <li>{item.task}</li>
-              <FcEmptyTrash />
+              <FcEmptyTrash onClick={() => removeTask(item.id)}/>
             </ListItem>
           ))}
         </ul>
